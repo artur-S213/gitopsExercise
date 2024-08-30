@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logout-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: logout
+  template:
+    metadata:
+      labels:
+        app: logout
+    spec:
+      initContainers:
+        - name: wait-for-pingpong
+          image: busybox
+          command: ['sh', '-c', 'until nc -z pingpong-service 4001; do echo waiting for pingpong; sleep 2; done;']
+      containers:
+        - name: logout
+          image: logout401:latest
+          # readinessProbe:
+          #   initialDelaySeconds: 10
+          #   periodSeconds: 10
+          #   httpGet:
+          #      path: /logout
+          #      port: 3001
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3001
