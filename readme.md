@@ -1,5 +1,8 @@
 # Setup
 
+Cluster url
+aks-learn--arturresource-fda566-4i6eamgj.hcp.eastus.azmk8s.io
+
 We use K3d Kubernetes Cluster for deploying javascript apps in Kubernetes
 
 Start K3d Cluster:
