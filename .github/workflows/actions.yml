@@ -72,7 +72,7 @@ jobs:
     - name: First Deploy to AKS 
       run: |
         ls -la  
-        kustomize build https://github.com/artur-S213/gitopsExercise/blob/main/kustomization.yml | kubectl apply -f https://github.com/artur-S213/gitopsExercise/blob/main/kustomization.yml
+        kustomize build . | kubectl apply -f -
 
     - name: Set up Kustomize
       uses: imranismail/setup-kustomize@v2
