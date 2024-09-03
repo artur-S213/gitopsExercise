@@ -64,10 +64,10 @@ jobs:
     # - name: Get AKS Credentials
     #   run: |
     #     az aks get-credentials --resource-group ${{ secrets.AKS_RESOURCE_GROUP }} --name ${{ secrets.AKS_CLUSTER_NAME }} --admin
+    # cd $GITHUB_WORKSPACE/gitopsExercise
     
     - name: First Deploy to AKS 
       run: |
-        cd $GITHUB_WORKSPACE/gitopsExercise
         ls -la  
         kustomize build . | kubectl apply -f -
 
