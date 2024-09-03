@@ -44,7 +44,7 @@ jobs:
     #   with:
     #     azcliversion: 2.33.0
     #     inlineScript: |
-    #       az login --service-principal -u <service-principal-id> -p <service-principal service> --tenant 8caad09b-4487-48f9-b7d6-b47e22b2dd2f
+    #       az login --service-principal -u <service-principal-id> -p <service-principal service> --tenant <tenant-id>
 
     - name: Azure Login
       uses: azure/login@v1
@@ -79,11 +79,11 @@ jobs:
           kustomize edit set image LOGOUT_IMAGE=${{ secrets.ACR_NAME }}.azurecr.io/logout407:latest
           kustomize edit set image PINGPONG_IMAGE=${{ secrets.ACR_NAME }}.azurecr.io/pingpong407:latest
           
-          - name: commit kustomization.yaml to GitHub
-          uses: EndBug/add-and-commit@v9
-          with:          
-          add: 'kustomization.yaml'
-          message: New version released ${{ github.sha }}
+    - name: commit kustomization.yaml to GitHub
+      uses: EndBug/add-and-commit@v9          
+      with:          
+        add: 'kustomization.yaml'
+        message: New version released ${{ github.sha }}
           
     - name: Deploy to AKS
       run: |          
