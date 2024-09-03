@@ -66,8 +66,7 @@ jobs:
     #     az aks get-credentials --resource-group ${{ secrets.AKS_RESOURCE_GROUP }} --name ${{ secrets.AKS_CLUSTER_NAME }} --admin
     
     - name: First Deploy to AKS 
-      run: |
-        cd ..          
+      run: |         
         kustomize build . | kubectl apply -f -
 
     - name: Set up Kustomize
@@ -85,6 +84,5 @@ jobs:
         message: New version released ${{ github.sha }}
           
     - name: Second Deploy to AKS
-      run: |
-        cd .. 
+      run: | 
         kustomize build . | kubectl apply -f -
