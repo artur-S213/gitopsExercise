@@ -20,3 +20,6 @@ images:
 - name: PINGPONG_IMAGE
   newName: artursreg.azurecr.io/pingpong407
   newTag: latest
+- name: NGINX_IMAGE
+  newName: nginx
+  newTag: stable-perl
