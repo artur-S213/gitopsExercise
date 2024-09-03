@@ -11,6 +11,7 @@ resources:
 - kubernetes/postgres-pvc.yaml
 - kubernetes/postgres-svc.yaml
 - kubernetes/postgres.yaml
+- kubernetes/nginx-depl.yaml
 
 
 images:
