@@ -67,8 +67,8 @@ jobs:
     
     - name: First Deploy to AKS 
       run: |
-        cd $GITHUB_WORKSPACE/
-        ls -la 
+        cd $GITHUB_WORKSPACE/gitopsExercise
+        ls -la  
         kustomize build . | kubectl apply -f -
 
     - name: Set up Kustomize
