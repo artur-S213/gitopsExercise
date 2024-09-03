@@ -66,10 +66,13 @@ jobs:
     #     az aks get-credentials --resource-group ${{ secrets.AKS_RESOURCE_GROUP }} --name ${{ secrets.AKS_CLUSTER_NAME }} --admin
     # cd $GITHUB_WORKSPACE/gitopsExercise
     
+    - name: Checkout code
+      uses: actions/checkout@v2
+
     - name: First Deploy to AKS 
       run: |
         ls -la  
-        kustomize build https://github.com/artur-S213/gitopsExercise | kubectl apply -f https://github.com/artur-S213/gitopsExercise
+        kustomize build https://github.com/artur-S213/gitopsExercise/blob/main/kustomization.yml | kubectl apply -f https://github.com/artur-S213/gitopsExercise/blob/main/kustomization.yml
 
     - name: Set up Kustomize
       uses: imranismail/setup-kustomize@v2
@@ -88,4 +91,4 @@ jobs:
           
     - name: Second Deploy to AKS
       run: | 
-        kustomize build https://github.com/artur-S213/gitopsExercise | kubectl apply -f https://github.com/artur-S213/gitopsExercise
+        kustomize build https://github.com/artur-S213/gitopsExercise/blob/main/kustomization.yml | kubectl apply -f https://github.com/artur-S213/gitopsExercise/blob/main/kustomization.yml
