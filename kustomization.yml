@@ -12,9 +12,11 @@ resources:
 - kubernetes/postgres-svc.yaml
 - kubernetes/postgres.yaml
 
+
 images:
 - name: LOGOUT_IMAGE
-  newName: artursreg.azurecr.io/logout407:latest
-
+  newName: artursreg.azurecr.io/logout407
+  newTag: latest
 - name: PINGPONG_IMAGE
-  newName: artursreg.azurecr.io/pingpong407:latest
+  newName: artursreg.azurecr.io/pingpong407
+  newTag: latest
