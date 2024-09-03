@@ -67,7 +67,7 @@ jobs:
     
     - name: First Deploy to AKS 
       run: |
-        cd $GITHUB_WORKSPACE/gitopsExercise          
+        cd ..          
         kustomize build . | kubectl apply -f -
 
     - name: Set up Kustomize
@@ -86,5 +86,5 @@ jobs:
           
     - name: Second Deploy to AKS
       run: |
-        cd $GITHUB_WORKSPACE/gitopsExercise
+        cd .. 
         kustomize build . | kubectl apply -f -
