@@ -91,4 +91,4 @@ jobs:
           
     - name: Second Deploy to AKS
       run: | 
-        kustomize build https://github.com/artur-S213/gitopsExercise/blob/main/kustomization.yml | kubectl apply -f https://github.com/artur-S213/gitopsExercise/blob/main/kustomization.yml
+        kustomize build . | kubectl apply -f -
