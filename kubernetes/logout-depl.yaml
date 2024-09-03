@@ -18,7 +18,7 @@ spec:
           command: ['sh', '-c', 'until nc -z pingpong-service 4001; do echo waiting for pingpong; sleep 2; done;']
       containers:
         - name: logout
-          image: logout401:latest
+          image: LOGOUT_IMAGE
           # readinessProbe:
           #   initialDelaySeconds: 10
           #   periodSeconds: 10
