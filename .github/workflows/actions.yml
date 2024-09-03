@@ -39,13 +39,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    # - name: Set up Azure CLI
-    #   uses: azure/CLI@v1
-    #   with:
-    #     azcliversion: 2.33.0
-    #     inlineScript: |
-    #       az login --service-principal -u <service-principal-id> -p <service-principal service> --tenant <tenant-id>
-
+   
     - name: Azure Login
       uses: azure/login@v1
       with:
