@@ -44,7 +44,7 @@ jobs:
     #   with:
     #     azcliversion: 2.33.0
     #     inlineScript: |
-    #       az login --service-principal -u 887f7420-def1-416b-8c68-c8615dce4cbe -p lYp8Q~BPaQbS9DDL4lpYJyOWyj0XpHTHndgeJcTJ --tenant 8caad09b-4487-48f9-b7d6-b47e22b2dd2f
+    #       az login --service-principal -u <service-principal-id> -p <service-principal service> --tenant 8caad09b-4487-48f9-b7d6-b47e22b2dd2f
 
     - name: Azure Login
       uses: azure/login@v1
