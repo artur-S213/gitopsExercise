@@ -17,4 +17,4 @@ images:
   newName: artursreg.azurecr.io/logout407:latest
 
 - name: PINGPONG_IMAGE
-  newName: artursreg.azurecr.io/pinpong407:latest
+  newName: artursreg.azurecr.io/pingpong407:latest
