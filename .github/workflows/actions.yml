@@ -76,6 +76,7 @@ jobs:
  
     - name: Set images in kustomization.yaml
       run: |
+          ls -la
           kustomize edit set image LOGOUT_IMAGE=${{ secrets.ACR_NAME }}.azurecr.io/logout407:latest
           kustomize edit set image PINGPONG_IMAGE=${{ secrets.ACR_NAME }}.azurecr.io/pingpong407:latest
           
